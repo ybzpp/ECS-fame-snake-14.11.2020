@@ -8,6 +8,7 @@ namespace Client
         private EcsWorld _world = null;
         private Configuration _configuration = null;
         private SceneData _sceneData = null;
+        private LevelProgress _levelProgress = null;
 
         public void Init () 
         {
@@ -27,7 +28,7 @@ namespace Client
 
             //grid init
             var gridSize = _configuration.GridSize;
-            var step = _configuration.Step;
+            var step = _configuration.Step; 
 
             for (int x = 0 - (gridSize / 2) - 1 ; x < (gridSize / 2) + 1; x++)
             {
@@ -39,8 +40,6 @@ namespace Client
                     gridEntity.Get<ColorComponent>();
                 }
             }
-
-            
 
         }
     }

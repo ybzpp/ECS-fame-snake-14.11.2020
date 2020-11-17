@@ -1,7 +1,7 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Client 
+namespace Client
 {
     sealed class AppleSystem : IEcsRunSystem
     {
@@ -10,7 +10,7 @@ namespace Client
         private SceneData _sceneData = null;
         private EcsWorld _world = null;
 
-        public void Run ()
+        public void Run()
         {
             var gridSize = _sceneData.GridSize;
             var position = new Vector3(Random.Range((gridSize / 2) * (-1), gridSize / 2), _sceneData.SpawnPoint.position.y, Random.Range((gridSize / 2) * (-1), gridSize / 2));
@@ -40,12 +40,10 @@ namespace Client
                         _levelProgress.Apple++;
                         _levelProgress.Score++;
                         _sceneData.TailLength++;
-                        _sceneData.Speed ++;
+                        _sceneData.Speed++;
                     }
                 }
             }
         }
     }
-
-
 }

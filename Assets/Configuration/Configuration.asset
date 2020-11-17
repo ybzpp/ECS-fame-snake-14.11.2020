@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Step: 1
   Time: 0.1
-  GridSize: 20
+  GridSize: 15
   TailLength: 1
-  AppleToLevelMax: 2
-  Speed: 100
+  AppleToLevelMax: 5
+  Speed: 70

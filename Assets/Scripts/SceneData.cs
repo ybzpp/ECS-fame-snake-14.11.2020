@@ -27,7 +27,7 @@ namespace Client
         public int AppleToLevel;
         public float Speed;
 
-
+        public MoveState MoveState;
     }
 
 }

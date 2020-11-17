@@ -35,10 +35,7 @@ namespace Client
                 .Add(new AppleSystem())
                 .Add(new UISystem())
                 .Add(new CameraFollowSystam())
-
-                //.Add(new BoostSystem())
-                //.Add(new ViewSystem())
-                //.Add(new TeleportSystem ())
+                .Add(new WinSystem())
 
                 // register one-frame components (order is important), for example:
 

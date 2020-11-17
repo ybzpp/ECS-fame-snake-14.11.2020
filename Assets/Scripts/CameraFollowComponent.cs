@@ -7,6 +7,4 @@ namespace Client
     {
     public Transform TargetTransform;
     }
-
-
 }

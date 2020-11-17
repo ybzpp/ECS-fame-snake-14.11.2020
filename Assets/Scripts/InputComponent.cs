@@ -12,4 +12,13 @@ namespace Client
         Left,
         Right
     }
+
+    public enum GameState
+    {
+        Menu,
+        Game,
+        Pause,
+        Win,
+        GameOver
+    }
 }

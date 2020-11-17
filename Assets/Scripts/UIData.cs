@@ -11,6 +11,10 @@ public class UIData : MonoBehaviour
     public Text TailLengthText;
     public Text TimeText;
     public Text CameraText;
+    public Text DirectionText;
+
+    public GameObject UIGameOver;
+    public GameObject UIGameStart;
 }
 
 
