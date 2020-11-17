@@ -6,29 +6,37 @@ namespace Client {
     {
         private EcsFilter<InputComponent> _filter = null;
         private EcsWorld _world = null;
-        
+        private SceneData _sceneData = null;
+
         void IEcsRunSystem.Run () 
         {
             foreach (var index in _filter)
             {
                 ref var moveState = ref _filter.Get1(index).MoveState;
 
-                if (Input.GetKey(KeyCode.W) && moveState != MoveState.Down)
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                 {
-                    moveState = MoveState.Up;
+                    if (moveState != MoveState.Down)
+                        moveState = MoveState.Up;
                 }
-                else if (Input.GetKey(KeyCode.S) && moveState != MoveState.Up)
+                else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
                 {
-                    moveState = MoveState.Down;
+                    if (moveState != MoveState.Up)
+                        moveState = MoveState.Down;
                 }
-                else if (Input.GetKey(KeyCode.A) && moveState != MoveState.Right)
+                else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                 {
-                    moveState = MoveState.Left;
+                    if (moveState != MoveState.Right)
+                        moveState = MoveState.Left;
                 }
-                else if (Input.GetKey(KeyCode.D) && moveState != MoveState.Left)
+                else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
                 {
-                    moveState = MoveState.Right;
+                    if (moveState != MoveState.Left)
+                        moveState = MoveState.Right;
                 }
+                if (Input.GetKeyDown(KeyCode.Space))
+                     _sceneData.CameraGrid.enabled = !_sceneData.CameraGrid.enabled;
+                
             }
         }
     }

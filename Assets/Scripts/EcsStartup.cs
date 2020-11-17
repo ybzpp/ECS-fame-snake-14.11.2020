@@ -11,6 +11,7 @@ namespace Client
         public Configuration Configuration;
         public SceneData SceneData;
         public LevelProgress LevelProgress;
+        public UIData UIdata;
 
         void Start () 
         {
@@ -33,6 +34,7 @@ namespace Client
                 .Add(new TailSystem())
                 .Add(new AppleSystem())
                 .Add(new UISystem())
+                .Add(new CameraFollowSystam())
 
                 //.Add(new BoostSystem())
                 //.Add(new ViewSystem())
@@ -48,6 +50,7 @@ namespace Client
                 .Inject(new LevelProgress())
                 .Inject(Configuration)
                 .Inject(SceneData)
+                .Inject(UIdata)
                 .Init();
         }
         

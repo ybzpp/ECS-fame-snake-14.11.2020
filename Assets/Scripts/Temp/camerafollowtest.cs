@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camerafollowtest : MonoBehaviour
+namespace Client
+{
+    public class camerafollowtest : MonoBehaviour
 {
 
-    public Transform CameraTransform;
-    public Transform Target;
-    public float Speed = 1f;
-    void Start()
-    {
+    //public Transform CameraTransform;
+    //public Transform TargetTransform;
+    //public float Speed = 1f;
+    //void Start()
+    //{
         
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        CameraTransform.position = Vector3.Lerp(CameraTransform.position, new Vector3(Target.position.x, CameraTransform.position.y, Target.position.z), Speed * Time.deltaTime);
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    CameraTransform.position = Vector3.Lerp(CameraTransform.position, new Vector3(TargetTransform.position.x, CameraTransform.position.y, TargetTransform.position.z), Speed * Time.deltaTime);
+    //}
+}
+
 }

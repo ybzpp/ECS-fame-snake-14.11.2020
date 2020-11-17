@@ -23,6 +23,7 @@ namespace Client
             playerEntity.Get<MoveComponent>();
             playerEntity.Get<SnakeViewComponent>();
             playerEntity.Get<SnakeTailComponent>();
+            playerEntity.Get<CameraFollowComponent>();
 
             //grid init
             var gridSize = _configuration.GridSize;
@@ -38,6 +39,8 @@ namespace Client
                     gridEntity.Get<ColorComponent>();
                 }
             }
+
+            
 
         }
     }
