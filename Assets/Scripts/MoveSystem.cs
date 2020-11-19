@@ -38,8 +38,6 @@ namespace Client
 
                 _timeUpdate = _configuration.Time / (_sceneData.Speed / 100);
                 _timeNextUpdate = Time.time + _timeUpdate;
-
-
             }
 
             foreach (var index in _filter)

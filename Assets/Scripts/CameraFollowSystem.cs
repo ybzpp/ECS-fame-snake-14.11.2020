@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Leopotam.Ecs;
 
 namespace Client
 {
-    sealed class CameraFollowSystam : IEcsRunSystem
+    sealed class CameraFollowSystem : IEcsRunSystem
     {
         private EcsFilter<SnakeViewComponent> _filter;
         private EcsWorld _world = null;
@@ -17,7 +17,7 @@ namespace Client
                 ref var camera = ref _sceneData.CameraPlayer;
                 var speed = _sceneData.CameraSpeed;
 
-                var posX = targetTransform.transform.position.x + _sceneData.CameraOffset.x ;
+                var posX = targetTransform.transform.position.x + _sceneData.CameraOffset.x;
                 var posY = targetTransform.transform.position.y + _sceneData.CameraOffset.y;
                 var posZ = targetTransform.transform.position.z + _sceneData.CameraOffset.z;
 

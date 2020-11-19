@@ -11,7 +11,8 @@ namespace Client
         public Configuration Configuration;
         public SceneData SceneData;
         public LevelProgress LevelProgress;
-        public UIData UIdata;
+        public UIData UIData;
+        public UIDataStart UIDataStart;
 
         void Start () 
         {
@@ -34,8 +35,8 @@ namespace Client
                 .Add(new TailSystem())
                 .Add(new AppleSystem())
                 .Add(new UISystem())
-                .Add(new CameraFollowSystam())
-                .Add(new WinSystem())
+                .Add(new CameraFollowSystem())
+                .Add(new GameStateSystem())
 
                 // register one-frame components (order is important), for example:
 
@@ -47,7 +48,8 @@ namespace Client
                 .Inject(new LevelProgress())
                 .Inject(Configuration)
                 .Inject(SceneData)
-                .Inject(UIdata)
+                .Inject(UIData)
+                .Inject(UIDataStart)
                 .Init();
         }
         

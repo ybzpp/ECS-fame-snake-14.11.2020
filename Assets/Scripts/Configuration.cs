@@ -12,6 +12,9 @@ namespace Client
         public int TailLength = 3;
         public int AppleToLevelMax = 2;
         public float Speed = 1;
+        public float MinSpeed = 10;
+        public float MaxSpeed = 300;
+
     }
 }
 

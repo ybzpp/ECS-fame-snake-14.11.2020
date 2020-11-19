@@ -14,43 +14,28 @@ namespace Client
 
         public void Run()
         {
-            if (_levelProgress.GameState == GameState.GameOver)
-            {
-                _uiData.UIGameOver.SetActive(true);
-            }
-            else 
-            {
-                _uiData.UIGameOver.SetActive(false);
-            }
+            UIText();
+        }
+        void UIText()
+        {
+            _uiData.ScoreValueText.text = $"{_levelProgress.Score.ToString().ToUpper()}";
+            _uiData.LevelText.text = $"LEVEL {_levelProgress.Level.ToString().ToUpper()}";
+            _uiData.SpeedText.text = $"X{_sceneData.Speed.ToString().ToUpper()}";
+            _uiData.AppleToLevelMaxText.text = $"{_sceneData.AppleToLevelMax.ToString().ToUpper()}";
+            _uiData.GridSizeText.text = $"{_configuration.GridSize.ToString().ToUpper()} X {_configuration.GridSize.ToString().ToUpper()}";
+            _uiData.TailLengthText.text = $"{_sceneData.TailLength.ToString().ToUpper()} CM";
+            _uiData.TimeText.text = $"{Mathf.Round(Time.time).ToString().ToUpper()} SEC";
+            _uiData.DirectionText.text = $"{_sceneData.MoveState.ToString().ToUpper()}";
 
-            if (_levelProgress.GameState == GameState.Menu)
+            if (!_sceneData.CameraGrid.enabled)
             {
-                _uiData.UIGameStart.SetActive(true);
+                _uiData.CameraText.text = $"PLAYER";
             }
             else
             {
-                _uiData.UIGameStart.SetActive(false);
-                if (_levelProgress.GameState == GameState.Game)
-                {
-                    _uiData.ScoreText.text = $"Score: {_levelProgress.Score.ToString()}";
-                    _uiData.SpeedText.text = $"Speed: {_sceneData.Speed.ToString()}";
-                    _uiData.AppleToLevelMaxText.text = $"Apple max: {_sceneData.AppleToLevelMax.ToString()}";
-                    _uiData.GridSizeText.text = $"Grid size: {_configuration.GridSize.ToString()} x {_configuration.GridSize.ToString()}";
-                    _uiData.TailLengthText.text = $"Tail length: {_sceneData.TailLength.ToString()}";
-                    _uiData.TimeText.text = $"Time: {Mathf.Round(Time.time)} sec";
-                    _uiData.DirectionText.text = $"Direction: {_sceneData.MoveState}";
-
-                    if (!_sceneData.CameraGrid.enabled)
-                    {
-                        _uiData.CameraText.text = $"Camera: Player";
-                    }
-                    else
-                    {
-                        _uiData.CameraText.text = $"Camera: Grid";
-                    }
-                }
-                
+                _uiData.CameraText.text = $"GRID";
             }
+            
         }
     }
 }

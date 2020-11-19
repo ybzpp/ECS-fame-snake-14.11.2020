@@ -8,7 +8,6 @@ namespace Client
         private EcsWorld _world = null;
         private Configuration _configuration = null;
         private SceneData _sceneData = null;
-        private LevelProgress _levelProgress = null;
 
         public void Init () 
         {

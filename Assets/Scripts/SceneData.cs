@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Client
 {
@@ -27,7 +28,43 @@ namespace Client
         public int AppleToLevel;
         public float Speed;
 
+
+
         public MoveState MoveState;
+
+        public void moveStateSet(MoveState moveState)
+        {
+            MoveState = moveState;
+        }
+
+        public void AppleMaxAdd(int value)
+        {
+            AppleToLevelMax += value;
+            AppleMaxTest();
+        }
+        public void TailLengthAdd(int value)
+        {
+            TailLength += value;
+            TailLengthTest();
+        }
+
+        public void AppleMaxTest()
+        {
+            if (AppleToLevelMax < 1)
+            {
+                AppleToLevelMax = 1;
+            }
+            //не больше чем размер поля - количество хвоста - голова
+        }
+        public void TailLengthTest()
+        {
+            if (TailLength < 0)
+            {
+                TailLength = 0;
+            }
+            //не больше чем размер поля - количество хвоста - голова
+        }
     }
+
 
 }
