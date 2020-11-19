@@ -26,6 +26,7 @@ namespace Client
 #endif
             _systems
                 .Add(new GameInitSystem())
+                .Add(new ProgressLevelSystem())
                 .Add(new GridViewSystem())
                 .Add(new ColorPaletteSystem())
                 .Add(new InputSystem())

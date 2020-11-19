@@ -8,7 +8,15 @@ namespace Client {
         private LevelProgress _levelProgress = null;
         private SceneData _sceneData = null;
         private EcsWorld _world = null;
-        
+        private UIData _uiData = null;
+        public void GameRestart()
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+        public void ChangeCamera()
+        {
+            _sceneData.CameraGrid.enabled = !_sceneData.CameraGrid.enabled;
+        }
         void IEcsRunSystem.Run () 
         {
             foreach (var index in _filter) 
@@ -20,7 +28,7 @@ namespace Client {
                 var gameState = _levelProgress.GameState;
 
                 if (Input.GetKeyDown(KeyCode.R))
-                    Application.LoadLevel(Application.loadedLevel);
+                    GameRestart();
 
                 if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                 {
@@ -97,6 +105,8 @@ namespace Client {
                     }
                 }
 
+                _uiData.UIButtonCameraInGame.onClick.AddListener(ChangeCamera);
+
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     switch (gameState)
@@ -110,11 +120,11 @@ namespace Client {
 
                             break;
                         case GameState.Win:
-                            Application.LoadLevel(Application.loadedLevel);
+                            GameRestart();
                             break;
 
                         case GameState.GameOver:
-                            Application.LoadLevel(Application.loadedLevel);
+                            GameRestart();
                             break;
                     }
                 }

@@ -36,6 +36,13 @@ public class UIData : MonoBehaviour
     //ui controll screen
     public GameObject UIControllScreen;
 
+    //ui ingame
+    public GameObject UIScreenInGame;
+    public Button UIButtonSettingInGame;
+    public Button UIButtonRestartInGame;
+    public Button UIButtonCameraInGame;
+    public TextMeshProUGUI ScoreValueIngameText;
+
     private void Start()
     {
         GameScreenView();

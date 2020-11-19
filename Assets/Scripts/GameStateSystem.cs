@@ -24,11 +24,13 @@ namespace Client
             _uiData.SpeedSlider.maxValue = _configuration.MaxSpeed;
             _uiData.SpeedSlider.value = _sceneData.Speed;
         }
-
+        
        public void GameStateSet(GameState gameState)
         {
             _levelProgress.GameState = gameState;
         }
+
+        
 
         public void Run()
         {
@@ -44,15 +46,19 @@ namespace Client
             switch (gameState)
             {
                 case (GameState.Menu):
+                    _uiData.UIScreenInGame.SetActive(false);
                     _uiDataStart.UIGameOver.SetActive(false);
                     _uiDataStart.UIGameStart.SetActive(true);
                     break;
                 case (GameState.Game):
+                    _uiData.UIScreenInGame.SetActive(true);
                     _uiDataStart.UIGameStart.SetActive(false);
                     break;
                 case (GameState.Pause):
+                    _uiData.UIScreenInGame.SetActive(false);
                     break;
                 case (GameState.GameOver):
+                    _uiData.UIScreenInGame.SetActive(false);
                     _uiDataStart.UIGameOver.SetActive(true);
                     break;
                 case (GameState.Win):
@@ -60,6 +66,8 @@ namespace Client
             }
 
             _uiData.BackButton.onClick.AddListener(() => GameStateSet(GameState.Game));
+            _uiData.UIButtonSettingInGame.onClick.AddListener(() => GameStateSet(GameState.Pause));
+
 
             //GameState.Menu
             if (gameState == GameState.Menu)

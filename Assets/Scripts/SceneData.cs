@@ -13,7 +13,7 @@ namespace Client
         public GameObject GridPrefabGray;
         public GameObject GridEndPrefab;
 
-        public ColorPalette ColorPalette;
+        public ColorPalette CurrentColorPalette;
         public Transform ParentSceneObjects;
         public GameObject Apple;
 
@@ -21,6 +21,7 @@ namespace Client
         public Camera CameraGrid;
         public float CameraSpeed;
         public Vector3 CameraOffset;
+        public Animator CamAnimatior;
 
         public int GridSize;
         public int TailLength;
@@ -28,7 +29,12 @@ namespace Client
         public int AppleToLevel;
         public float Speed;
 
-
+        public ColorPalette ColorPalette1;
+        public ColorPalette ColorPalette2;
+        public ColorPalette ColorPalette3;
+        public ColorPalette ColorPalette4;
+        public ColorPalette ColorPalette5;
+        public ColorPalette ColorPalette6;
 
         public MoveState MoveState;
 

@@ -18,6 +18,8 @@ namespace Client
         }
         void UIText()
         {
+            _uiData.ScoreValueIngameText.text = $"{_levelProgress.Score.ToString().ToUpper()}";
+
             _uiData.ScoreValueText.text = $"{_levelProgress.Score.ToString().ToUpper()}";
             _uiData.LevelText.text = $"LEVEL {_levelProgress.Level.ToString().ToUpper()}";
             _uiData.SpeedText.text = $"X{_sceneData.Speed.ToString().ToUpper()}";

@@ -41,6 +41,12 @@ namespace Client
                         _levelProgress.Score++;
                         _sceneData.TailLength++;
                         _sceneData.Speed++;
+
+                        if (_levelProgress.Score % 10 == 0)
+                        {
+                            _levelProgress.Level++;
+                            _sceneData.CamAnimatior.SetTrigger("LevelProgressTriger");
+                        }
                     }
                 }
             }

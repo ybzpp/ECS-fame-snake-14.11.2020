@@ -18,13 +18,13 @@ namespace Client
                 switch (gridState)
                 {
                     case GridState.GridA:
-                        _filter.Get1(index).Prefab.GetComponent<MeshRenderer>().material.color = _sceneData.ColorPalette.ColorA;
+                        _filter.Get1(index).Prefab.GetComponent<MeshRenderer>().material.color = _sceneData.CurrentColorPalette.ColorA;
                         break;
                     case GridState.GridB:
-                        _filter.Get1(index).Prefab.GetComponent<MeshRenderer>().material.color = _sceneData.ColorPalette.ColorB;
+                        _filter.Get1(index).Prefab.GetComponent<MeshRenderer>().material.color = _sceneData.CurrentColorPalette.ColorB;
                         break;
                     case GridState.Wall:
-                        _filter.Get1(index).Prefab.GetComponent<MeshRenderer>().material.color = _sceneData.ColorPalette.ColorWalls;
+                        _filter.Get1(index).Prefab.GetComponent<MeshRenderer>().material.color = _sceneData.CurrentColorPalette.ColorWalls;
                         break;
 
                 }
