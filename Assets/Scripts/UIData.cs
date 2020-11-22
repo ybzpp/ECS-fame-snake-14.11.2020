@@ -24,9 +24,9 @@ public class UIData : MonoBehaviour
     public Button TailLengthButtonPlus;
     public Button TailLengthButtonMinus;
 
-    public TextMeshProUGUI AppleToLevelMaxText;
-    public Button AppleToLevelMaxPlus;
-    public Button AppleToLevelMaxMinus;
+    public TextMeshProUGUI FoodToLevelMaxText;
+    public Button FoodToLevelMaxPlus;
+    public Button FoodToLevelMaxMinus;
 
     public TextMeshProUGUI SpeedText;
     public Slider SpeedSlider;

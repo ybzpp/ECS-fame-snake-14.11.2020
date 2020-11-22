@@ -1,7 +1,6 @@
 ﻿namespace Client
 {
-    internal struct ColorComponent
+    internal struct ColorUpdateComponent
     {
-        public GridState GridState;
     }
 }

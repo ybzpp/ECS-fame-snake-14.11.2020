@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Client
 {
     public class SceneData : MonoBehaviour
     {
-        public Transform SpawnPoint;
         public GameObject PlayerPrefab;
         public GameObject TailPrefab;
 
@@ -15,7 +15,8 @@ namespace Client
 
         public ColorPalette CurrentColorPalette;
         public Transform ParentSceneObjects;
-        public GameObject Apple;
+
+        public GameObject Food; //LevelPresets
 
         public Camera CameraPlayer;
         public Camera CameraGrid;
@@ -25,16 +26,13 @@ namespace Client
 
         public int GridSize;
         public int TailLength;
-        public int AppleToLevelMax;
-        public int AppleToLevel;
-        public float Speed;
+        public int FoodToLevelMax;
+        public int FoodToLevel;
 
-        public ColorPalette ColorPalette1;
-        public ColorPalette ColorPalette2;
-        public ColorPalette ColorPalette3;
-        public ColorPalette ColorPalette4;
-        public ColorPalette ColorPalette5;
-        public ColorPalette ColorPalette6;
+        public float Speed; //LevelPresets
+
+        public List<LevelPreset> LevelPresets;
+        public List<GameObject> FoodPrefabs;
 
         public MoveState MoveState;
 
@@ -43,10 +41,10 @@ namespace Client
             MoveState = moveState;
         }
 
-        public void AppleMaxAdd(int value)
+        public void FoodMaxAdd(int value)
         {
-            AppleToLevelMax += value;
-            AppleMaxTest();
+            FoodToLevelMax += value;
+            FoodMaxTest();
         }
         public void TailLengthAdd(int value)
         {
@@ -54,11 +52,11 @@ namespace Client
             TailLengthTest();
         }
 
-        public void AppleMaxTest()
+        public void FoodMaxTest()
         {
-            if (AppleToLevelMax < 1)
+            if (FoodToLevelMax < 1)
             {
-                AppleToLevelMax = 1;
+                FoodToLevelMax = 1;
             }
             //не больше чем размер поля - количество хвоста - голова
         }

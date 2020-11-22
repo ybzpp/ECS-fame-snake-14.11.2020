@@ -9,6 +9,7 @@ public class ColorPalette : ScriptableObject
     public Color ColorB;
     public Color ColorWalls;
 
-    public Color ColorSnakeHead;
-    public Color ColorSnakeTail;
+    public Texture TextureA;
+    public Texture TextureB;
+    public Texture TextureWalls;
 }

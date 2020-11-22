@@ -5,16 +5,24 @@ namespace Client
     [CreateAssetMenu]
     public class Configuration : ScriptableObject
     {
-        public float Step = 1;
-        public float Time = 0.5f;
+        public float Step { get { return _step; } }
+        [SerializeField] private float _step = 1;
+        public float Time { get { return _time; } }
+        [SerializeField] private float _time = 0.5f;
 
-        public int GridSize = 10;
-        public int TailLength = 3;
-        public int AppleToLevelMax = 2;
-        public float Speed = 1;
-        public float MinSpeed = 10;
-        public float MaxSpeed = 300;
+        public int GridSize { get { return _gridSize; } }
+        [SerializeField] private int _gridSize = 10;
 
+        public int TailLength { get { return _tailLength; } }
+        [SerializeField] private int _tailLength = 1;
+
+        public int AppleToLevelMax { get { return _appleToLevelMax; } }
+        [SerializeField] private int _appleToLevelMax = 2;
+
+        public float MinSpeed { get { return _minSpeed; } }
+        [SerializeField] private float _minSpeed = 10;
+        public float MaxSpeed { get { return _maxSpeed; } }
+        [SerializeField] private float _maxSpeed = 300;
     }
 }
 

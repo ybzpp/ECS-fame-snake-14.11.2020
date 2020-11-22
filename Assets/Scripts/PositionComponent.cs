@@ -6,5 +6,9 @@ namespace Client
     {
         public Vector3 Position;
     }
+    public struct RotationComponent
+    {
+        public Quaternion Rotation;
+    }
 
 }
