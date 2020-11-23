@@ -45,7 +45,7 @@ namespace Client
 
             _sceneData.GridSize = _configuration.GridSize;
             _sceneData.TailLength = _configuration.TailLength;
-            _sceneData.FoodToLevelMax = _configuration.AppleToLevelMax;
+            _sceneData.FoodToLevelMax = _configuration.FoodToLevelMax;
             _sceneData.CurrentColorPalette = _sceneData.LevelPresets[0].ColorPalette;
 
             var randomFood = Random.Range(0, _sceneData.FoodPrefabs.Count);

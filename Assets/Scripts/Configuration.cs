@@ -16,8 +16,8 @@ namespace Client
         public int TailLength { get { return _tailLength; } }
         [SerializeField] private int _tailLength = 1;
 
-        public int AppleToLevelMax { get { return _appleToLevelMax; } }
-        [SerializeField] private int _appleToLevelMax = 2;
+        public int FoodToLevelMax { get { return _foodToLevelMax; } }
+        [SerializeField] private int _foodToLevelMax = 2;
 
         public float MinSpeed { get { return _minSpeed; } }
         [SerializeField] private float _minSpeed = 10;

@@ -29,6 +29,7 @@ namespace Client
             _uiData.BackButton.onClick.AddListener(() => GameStateSet(GameState.Game));
             _uiData.UIButtonSettingInGame.onClick.AddListener(() => GameStateSet(GameState.Pause));
 
+
             //slider
             if (_levelProgress.GameState == GameState.Pause)
             {
