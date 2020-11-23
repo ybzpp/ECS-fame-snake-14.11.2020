@@ -23,7 +23,6 @@ namespace Client
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create (_systems);
 #endif
             _systems
-                //.Add(new DungeonGenerator())
                 .Add(new GameInitSystem())
                 .Add(new GridViewSystem())
                 .Add(new GamePauseSystem())
@@ -36,12 +35,11 @@ namespace Client
                 .Add(new ColorPaletteSystem())
                 .Add(new GameOverSystem())
                 .Add(new UISystem())
-                .Add(new CameraFollowSystem())
+                .Add(new CameraPositionSystem())
 
                 .OneFrame<TailComponent>()
                 .OneFrame<LevelProgressEvent>()
                 .OneFrame<ColorUpdateComponent>()
-                .OneFrame<GridCreateEvent>()
 
                 .Inject(new LevelProgress())
                 .Inject(Configuration)
