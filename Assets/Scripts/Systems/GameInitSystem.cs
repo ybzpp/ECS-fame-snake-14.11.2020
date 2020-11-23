@@ -22,20 +22,10 @@ namespace Client
 
             //grid init
             var gridSize = _configuration.GridSize;
-            //for (int x = 0; x < gridSize; x++)
-            //{
-            //    for (int z = 0; z < gridSize; z++)
-            //    {
-            //        var gridEntity = _world.NewEntity();
-            //        gridEntity.Get<PositionComponent>().Position = new Vector3(x, -0.5f, z);
-            //        gridEntity.Get<GridViewComponent>();
-            //        gridEntity.Get<FloorComponent>();
-            //    }
-            //}
 
-            for (int x = -gridSize; x < gridSize * 2; x++)
+            for (int x = -1; x < gridSize +1; x++)
             {
-                for (int z = -gridSize; z < gridSize * 2; z++)
+                for (int z = -1; z < gridSize + 1; z++)
                 {
                     var wallEntity = _world.NewEntity();
                     wallEntity.Get<PositionComponent>().Position = new Vector3(x, -0.5f, z);
@@ -52,10 +42,10 @@ namespace Client
             }
 
             //data init
+
             _sceneData.GridSize = _configuration.GridSize;
             _sceneData.TailLength = _configuration.TailLength;
             _sceneData.FoodToLevelMax = _configuration.AppleToLevelMax;
-            _sceneData.CameraGrid.transform.position = new Vector3(_sceneData.GridSize / 2, _sceneData.GridSize * 3, _sceneData.GridSize / 2);
             _sceneData.CurrentColorPalette = _sceneData.LevelPresets[0].ColorPalette;
 
             var randomFood = Random.Range(0, _sceneData.FoodPrefabs.Count);
@@ -65,29 +55,11 @@ namespace Client
             _uiData.SpeedSlider.maxValue = _configuration.MaxSpeed;
             _uiData.SpeedSlider.value = _sceneData.Speed;
 
+            _sceneData.CameraGrid.orthographic = true;
+            _sceneData.CameraGrid.orthographicSize = _sceneData.GridSize + _sceneData.CameraGridOffset;
+            _sceneData.CameraGrid.transform.position = new Vector3(_sceneData.GridSize / 2, _sceneData.GridSize, _sceneData.GridSize / 2);
+
             _levelProgress.GameState = GameState.Menu;
-        }
-    }
-    sealed class GridCreatorSystem : IEcsRunSystem
-    {
-        private EcsWorld _world = null;
-        private EcsFilter <GridCreateEvent> _filter = null;
-        private Configuration _configuration = null;
-        private LevelProgress _levelProgress = null;
-
-        public void Run()
-        {
-            if (_levelProgress.Score%10 == 0)
-            {
-                _world.NewEntity().Get<GridCreateEvent>();
-            }
-
-            var gridSize = _configuration.GridSize;
-
-            foreach (var index in _filter)
-            {
-                
-            }
         }
     }
 }

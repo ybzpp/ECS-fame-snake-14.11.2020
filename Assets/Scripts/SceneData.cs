@@ -21,8 +21,9 @@ namespace Client
         public Camera CameraPlayer;
         public Camera CameraGrid;
         public float CameraSpeed;
-        public Vector3 CameraOffset;
         public Animator CamAnimatior;
+        public Vector3 CameraPlayerOffset;
+        public float CameraGridOffset;
 
         public int GridSize;
         public int TailLength;
@@ -35,6 +36,7 @@ namespace Client
         public List<GameObject> FoodPrefabs;
 
         public MoveState MoveState;
+
 
         public void moveStateSet(MoveState moveState)
         {

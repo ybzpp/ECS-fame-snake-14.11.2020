@@ -17,9 +17,9 @@ namespace Client
                 ref var camera = ref _sceneData.CameraPlayer;
                 var speed = _sceneData.CameraSpeed;
 
-                var posX = targetTransform.transform.position.x + _sceneData.CameraOffset.x;
-                var posY = targetTransform.transform.position.y + _sceneData.CameraOffset.y;
-                var posZ = targetTransform.transform.position.z + _sceneData.CameraOffset.z;
+                var posX = targetTransform.transform.position.x + _sceneData.CameraPlayerOffset.x;
+                var posY = targetTransform.transform.position.y + _sceneData.CameraPlayerOffset.y;
+                var posZ = targetTransform.transform.position.z + _sceneData.CameraPlayerOffset.z;
 
                 camera.transform.position = Vector3.Lerp(camera.transform.position, new Vector3(posX, posY, posZ), speed * Time.deltaTime);
             }

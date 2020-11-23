@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level7
   m_EditorClassIdentifier: 
   _name: Level7
-  _colorPalette: {fileID: 11400000, guid: a19d3a464f3b7134790ddb59efd6da78, type: 2}
+  _colorPalette: {fileID: 11400000, guid: 4db1d67211b58634c8a8c6def899dac0, type: 2}
   _foodPrefab: {fileID: 389368613874412115, guid: 3a767b870d50b3c4193e936bf6cd7a33,
     type: 3}
