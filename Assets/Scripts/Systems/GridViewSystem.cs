@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Client
 {
-    sealed class GridViewSystem : IEcsInitSystem , IEcsRunSystem
+    sealed class GridViewSystem : IEcsInitSystem
     {
         private EcsWorld _world = null;
         private SceneData _sceneData = null;
@@ -36,10 +36,6 @@ namespace Client
                 _filterWall.GetEntity(index).Get<ColorWallComponent>();
                 _filterWall.GetEntity(index).Get<ColorUpdateComponent>();
             }
-        }
-        public void Run()
-        {
-            
         }
     }
 }

@@ -3,27 +3,30 @@ using Leopotam.Ecs;
 
 namespace Client
 {
-    sealed class CameraFollowSystem : IEcsRunSystem
+    sealed class CameraFollowSystem : IEcsRunSystem, IEcsInitSystem
     {
         private EcsFilter<SnakeViewComponent> _filter;
         private EcsWorld _world = null;
         private SceneData _sceneData = null;
+        public void Init()
+        {
+            ref var camera = ref _sceneData.CameraPlayer;
 
+            var posX = _sceneData.GridSize / 2;
+            var posY = _sceneData.CameraPlayerOffset.y;
+            var posZ = -_sceneData.GridSize / 2;
+
+            camera.transform.position = new Vector3(posX, posY, posZ);
+
+            var relativePosition = new Vector3(posX, 0f, posZ) - camera.transform.position;
+            var relativeRotation = Quaternion.LookRotation(relativePosition);
+            camera.transform.rotation = Quaternion.Slerp(camera.transform.rotation, relativeRotation, Time.deltaTime * 1f);
+        }
         public void Run()
         {
-            foreach (var index in _filter)
-            {
-                ref var targetTransform = ref _filter.Get1(index).Prefab;
-                ref var camera = ref _sceneData.CameraPlayer;
-                var speed = _sceneData.CameraSpeed;
-
-                var posX = targetTransform.transform.position.x + _sceneData.CameraPlayerOffset.x;
-                var posY = targetTransform.transform.position.y + _sceneData.CameraPlayerOffset.y;
-                var posZ = targetTransform.transform.position.z + _sceneData.CameraPlayerOffset.z;
-
-                camera.transform.position = Vector3.Lerp(camera.transform.position, new Vector3(posX, posY, posZ), speed * Time.deltaTime);
-            }
+            
         }
+        
     }
 
 }

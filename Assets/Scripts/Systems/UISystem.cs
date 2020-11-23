@@ -12,6 +12,7 @@ namespace Client
         private Configuration _configuration = null;
         public UIDataStart _uiDataStart = null;
         private UIData _uiData = null;
+        private float _timeInGame;
 
         public void Run()
         {
@@ -76,8 +77,13 @@ namespace Client
         }
         void UIText()
         {
+            if (_levelProgress.GameState == GameState.Menu)
+            {
+                _timeInGame = 0f;
+            }
+
             _uiDataStart.UILevelText.text = $"LEVEL {_levelProgress.Level.ToString().ToUpper()}";
-            _uiDataStart.UITimeText.text = $"{Mathf.Round(Time.time).ToString().ToUpper()} SEC";
+            _uiDataStart.UITimeText.text = $"{Mathf.Round(_timeInGame += Time.deltaTime).ToString().ToUpper()} SEC";
 
             _uiData.ScoreValueIngameText.text = $"{_levelProgress.Score.ToString().ToUpper()}";
 
