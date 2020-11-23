@@ -65,8 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5260882060153572673, guid: c6d4f2a20ab300e4f85a883a7abd7f06,
-    type: 3}
+  m_Sprite: {fileID: 21300020, guid: c6d4f2a20ab300e4f85a883a7abd7f06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -340,9 +339,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b8e9583aa38b47243a8b8b99c46daa93, type: 2}
-  m_sharedMaterial: {fileID: -614094716614448993, guid: b8e9583aa38b47243a8b8b99c46daa93,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -366,8 +364,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -476,9 +474,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CONTROLL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b8e9583aa38b47243a8b8b99c46daa93, type: 2}
-  m_sharedMaterial: {fileID: -614094716614448993, guid: b8e9583aa38b47243a8b8b99c46daa93,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -502,8 +499,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -709,8 +706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7742476010039854937, guid: c6d4f2a20ab300e4f85a883a7abd7f06,
-    type: 3}
+  m_Sprite: {fileID: 21300022, guid: c6d4f2a20ab300e4f85a883a7abd7f06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

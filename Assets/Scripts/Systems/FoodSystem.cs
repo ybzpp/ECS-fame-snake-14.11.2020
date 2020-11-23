@@ -10,6 +10,7 @@ namespace Client
         private LevelProgress _levelProgress = null;
         private SceneData _sceneData = null;
         private EcsWorld _world = null;
+        private bool _busy;
 
         public void Run()
         {
@@ -17,12 +18,32 @@ namespace Client
             var gridSize = _sceneData.GridSize - 1;
             var randomPosition = new Vector3(Mathf.Round(Random.Range(0f, gridSize)), 0f, Mathf.Round(Random.Range(0f, gridSize)));
 
+
+            _busy = false;
+            foreach (var item in _levelProgress.FoodsColections)
+            {
+                if (item.transform.position == randomPosition)
+                {
+                    _busy = true;
+                }
+            }
+            foreach (var item in _levelProgress.TailsColections)
+            {
+                if (item.transform.position == randomPosition)
+                {
+                    _busy = true;
+                }
+            }
+
             if (_levelProgress.FoodToLevel < _sceneData.FoodToLevelMax)
             {
-                var appleEntity = _world.NewEntity();
-                appleEntity.Get<FoodComponent>().Prefab = Object.Instantiate(_sceneData.Food, randomPosition, Quaternion.identity);
-                appleEntity.Get<PositionComponent>().Position = randomPosition;
-                _levelProgress.FoodToLevel++;
+                if (!_busy)
+                {
+                    var appleEntity = _world.NewEntity();
+                    appleEntity.Get<FoodComponent>().Prefab = Object.Instantiate(_sceneData.Food, randomPosition, Quaternion.identity);
+                    appleEntity.Get<PositionComponent>().Position = randomPosition;
+                    _levelProgress.FoodToLevel++;
+                }
             }
 
 

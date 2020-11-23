@@ -47,12 +47,12 @@ namespace Client
                         }
                         break;
                     case MoveState.Down:
-
-                        if (transform.rotation != Quaternion.Euler(0f, 0f, 0f) || _levelProgress.GameState == GameState.Menu)
+                        if (transform.rotation != Quaternion.Euler(0f, 0f, 0f) && _levelProgress.GameState != GameState.Menu)
                         {
                             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
                             direction = new Vector2(0, step * (-1));
                         }
+
                         break;
                     case MoveState.Left:
                         if (transform.rotation != Quaternion.Euler(0f, 90f, 0f) || _levelProgress.GameState == GameState.Menu)
