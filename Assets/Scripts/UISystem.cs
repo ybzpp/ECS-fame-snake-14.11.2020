@@ -16,6 +16,7 @@ namespace Client
 
         public void Run()
         {
+            
             UIMenu();
             UIView();
             UIText();
@@ -24,6 +25,19 @@ namespace Client
         {
             _levelProgress.GameState = gameState;
         }
+        //void UIFollowCursor()
+        //{
+        //    if (_levelProgress.GameState == GameState.Pause)
+        //    {
+        //        var camera = Camera.main;
+        //        var mousePos = Input.mousePosition;
+
+        //        var point = camera.ScreenToViewportPoint(new Vector3(mousePos.x, mousePos.y));
+        //        ref var UIScreen = ref _uiData.UIScreen;
+        //        UIScreen.transform.rotation = Quaternion.LookRotation(point);
+        //    }
+            
+        //}
         void UIMenu()
         {
             //button

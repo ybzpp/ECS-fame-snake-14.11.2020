@@ -8,12 +8,13 @@ namespace Client
         private EcsFilter<SnakeViewComponent, MoveComponent> _filter;
         private EcsWorld _world;
         private SceneData _sceneData;
+        private Configuration _configuration;
 
         public void Init()
         {
             foreach (var index in _filter)
             {
-                var gridSize = _sceneData.GridSize;
+                var gridSize = _configuration.GridSize;
                 if (gridSize % 2 == 1)
                 {
                     gridSize -= 1;

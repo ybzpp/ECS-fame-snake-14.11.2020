@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: color 11
   m_EditorClassIdentifier: 
   ColorA: {r: 0.16037738, g: 0.12438027, b: 0.12028304, a: 0}
-  ColorB: {r: 0.7830189, g: 0.7260558, b: 0.42475083, a: 0}
-  ColorWalls: {r: 0.26415092, g: 0.1566926, b: 0.03613386, a: 1}
+  ColorB: {r: 0.2735849, g: 0.2289787, b: 0, a: 0}
+  ColorWalls: {r: 0.11320752, g: 0.08611174, b: 0.05500177, a: 1}
   TextureA: {fileID: 0}
   TextureB: {fileID: 0}
   TextureWalls: {fileID: 0}

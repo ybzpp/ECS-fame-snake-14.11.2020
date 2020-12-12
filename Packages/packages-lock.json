@@ -1,16 +1,18 @@
 {
   "dependencies": {
     "com.leopotam.ecs": {
-      "version": "file:C:/Users/SRG_COMP_01/Downloads/ecs-master (1)/ecs-master",
+      "version": "https://github.com/Leopotam/ecs.git",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "e5edd6e007ccdb3725736c020a806bafdc6fb0c0"
     },
     "com.leopotam.ecs-unityintegration": {
-      "version": "file:C:/Users/SRG_COMP_01/Downloads/ecs-unityintegration-master (1)/ecs-unityintegration-master",
+      "version": "https://github.com/Leopotam/ecs-unityintegration.git",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "47a1a8ea26342894459ec478d56856c3f71a7cab"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",

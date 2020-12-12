@@ -7,9 +7,10 @@ namespace Client
     {
         private EcsWorld _world = null;
         private SceneData _sceneData = null;
+        private Configuration _configuration = null;
         public void Init()
         {
-            var gridSize = _sceneData.GridSize;
+            var gridSize = _configuration.GridSize;
 
             //camera player
             ref var cameraPlayer = ref _sceneData.CameraPlayer;

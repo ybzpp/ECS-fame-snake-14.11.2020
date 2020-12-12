@@ -43,7 +43,6 @@ namespace Client
             }
 
             //data init
-            _sceneData.GridSize = _configuration.GridSize;
             _sceneData.TailLength = _configuration.TailLength;
             _sceneData.FoodToLevelMax = _configuration.FoodToLevelMax;
         }

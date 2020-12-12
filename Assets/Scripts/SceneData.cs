@@ -25,7 +25,6 @@ namespace Client
         public Vector3 CameraPlayerOffset;
         public float CameraGridOffset;
 
-        public int GridSize;
         public int TailLength;
         public int FoodToLevelMax;
         public int FoodToLevel;
@@ -36,7 +35,6 @@ namespace Client
         public List<GameObject> FoodPrefabs;
 
         public MoveState MoveState;
-
 
         public void moveStateSet(MoveState moveState)
         {

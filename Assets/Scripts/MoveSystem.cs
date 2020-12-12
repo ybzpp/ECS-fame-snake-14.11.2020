@@ -74,7 +74,7 @@ namespace Client
                 transform.position = new Vector3(transform.position.x + direction.x, transform.position.y, transform.position.z + direction.y);
 
                 // телепорт если вышел за границы
-                var gridSize = _sceneData.GridSize;
+                var gridSize = _configuration.GridSize;
 
                 if (transform.position.x == gridSize)
                 {
@@ -94,6 +94,40 @@ namespace Client
                 else if (transform.position.z == -1f)
                 {
                     transform.position = new Vector3(transform.position.x, transform.position.y, gridSize - 1f);
+                }
+            }
+        }
+    }
+    sealed class MoveSmootheeSystem : IEcsRunSystem
+    {
+        private EcsFilter<MoveComponent, InputComponent, SnakeViewComponent> _filter = null;
+        private EcsWorld _world = null;
+        private Configuration _configuration = null;
+        private SceneData _sceneData;
+        private float _timeNextUpdate;
+        private float _timeUpdate;
+        private LevelProgress _levelProgress = null;
+
+        void IEcsRunSystem.Run()
+        {
+            foreach (var index in _filter)
+            {
+                var step = _configuration.Step;
+                var moveState = _sceneData.MoveState;
+
+                ref var transform = ref _filter.Get1(index).Transform;
+                ref var direction = ref _filter.Get1(index).Direction;
+
+                switch (moveState)
+                {
+                    case MoveState.Up:
+                        break;
+                    case MoveState.Down:
+                        break;
+                    case MoveState.Left:
+                        break;
+                    case MoveState.Right:
+                        break;
                 }
             }
         }

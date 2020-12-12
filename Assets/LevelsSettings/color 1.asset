@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70caf751ad003a64fafc077393e18c05, type: 3}
   m_Name: color 1
   m_EditorClassIdentifier: 
-  ColorA: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0}
+  ColorA: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
   ColorB: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
   ColorWalls: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   TextureA: {fileID: 0}

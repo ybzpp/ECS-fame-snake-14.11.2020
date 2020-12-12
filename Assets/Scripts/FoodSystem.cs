@@ -7,6 +7,7 @@ namespace Client
     {
         private EcsFilter<FoodComponent, PositionComponent> _filterFood = null;
         private LevelProgress _levelProgress = null;
+        private Configuration _configuration = null;
         private SceneData _sceneData = null;
         private EcsWorld _world = null;
         private bool _busy;
@@ -20,7 +21,7 @@ namespace Client
         public void Run()
         {
             //create food
-            var gridSize = _sceneData.GridSize - 1;
+            var gridSize = _configuration.GridSize - 1;
             var randomPosition = new Vector3(Mathf.Round(Random.Range(0f, gridSize)), 0f, Mathf.Round(Random.Range(0f, gridSize)));
 
             //проверка есть ли в позиции хвост или еда
